@@ -1,13 +1,13 @@
 {% set name = "plotmol" %}
 {% set version = "0.0.1" %}
-{% set sha256 = "e01d3bf576c487ae63f3a10eb461c91512fa5f33cd7b7a18230f962f6be165f1" %}
+{% set sha256 = "187b49b3dab26b1246affa5bef71e18a639d7d0375eb143ec7d85505b77373d5" %}
 
 package:
   name: plotmol
   version: {{ version }}
 
 source:
-  url: https://github.com/openforcefield/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/SimonBoothroyd/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -21,37 +21,18 @@ requirements:
     - pip
   run:
     - python
-    - openforcefield >=0.7.1
-    - numpy
-    - pandas
-    - openmm
-    - networkx
-    - pint >=0.10.1,<0.15
-    - packmol
-    - pymbar >=3.0.5
-    - mdtraj >=1.9.3
-    - dask >=2.7.0
-    - distributed >=2.7.0
-    - dask-jobqueue >=0.7.0
-    - uncertainties
-    - openmmtools
-    - yank >=0.25.2
-    - pyyaml
-    - requests
     - rdkit
-    - cmiles
-    - python-dateutil
-    - pydantic
+    - bokeh
 
 test:
   imports:
-    - openff.evaluator
+    - plotmol
 
 about:
-  home: https://github.com/openforcefield/openff-evaluator
+  home: https://github.com/SimonBoothroyd/plotmol
   license: MIT
   license_file: LICENSE
-  description: A physical property evaluation toolkit from the Open Forcefield Consortium.
+  description: Interactive plotting of data annotated with molecule structures.
 
 extra:
   recipe-maintainers:
