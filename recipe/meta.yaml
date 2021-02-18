@@ -1,0 +1,58 @@
+{% set name = "plotmol" %}
+{% set version = "0.0.1" %}
+{% set sha256 = "e01d3bf576c487ae63f3a10eb461c91512fa5f33cd7b7a18230f962f6be165f1" %}
+
+package:
+  name: plotmol
+  version: {{ version }}
+
+source:
+  url: https://github.com/openforcefield/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - openforcefield >=0.7.1
+    - numpy
+    - pandas
+    - openmm
+    - networkx
+    - pint >=0.10.1,<0.15
+    - packmol
+    - pymbar >=3.0.5
+    - mdtraj >=1.9.3
+    - dask >=2.7.0
+    - distributed >=2.7.0
+    - dask-jobqueue >=0.7.0
+    - uncertainties
+    - openmmtools
+    - yank >=0.25.2
+    - pyyaml
+    - requests
+    - rdkit
+    - cmiles
+    - python-dateutil
+    - pydantic
+
+test:
+  imports:
+    - openff.evaluator
+
+about:
+  home: https://github.com/openforcefield/openff-evaluator
+  license: MIT
+  license_file: LICENSE
+  description: A physical property evaluation toolkit from the Open Forcefield Consortium.
+
+extra:
+  recipe-maintainers:
+    - simonboothroyd
