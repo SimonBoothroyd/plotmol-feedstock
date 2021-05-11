@@ -1,6 +1,6 @@
 {% set name = "plotmol" %}
-{% set version = "0.0.2" %}
-{% set sha256 = "8cbdcde9d900f3f5c474a1e20cf2fe7dde1ad07479478915aaf0dc6a23d5754d" %}
+{% set version = "0.0.3" %}
+{% set sha256 = "434078c293b20887f131f9be667a351d754fc7b9eb750e0c20c276e48d65afe4" %}
 
 package:
   name: plotmol
